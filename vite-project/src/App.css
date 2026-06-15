@@ -1,0 +1,21 @@
+#button{
+    background-color:blue;
+    color:white;
+    font-size:large;
+  
+}
+#button:hover{
+    background-color:black;
+    color:white;
+}
+html, body, #root {
+  /* height: 100%;
+  margin: 0; */
+  width: 100%;
+
+}
+
+.change{
+  background-color:black;
+  color:white;
+}
