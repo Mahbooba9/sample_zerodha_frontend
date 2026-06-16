@@ -7,19 +7,21 @@ import Login from './Login'
 import Home from './Home'
 import About from './About'
 import {Routes,Route} from 'react-router-dom'
+import { useState } from 'react'
 
 function App() {
+const [searchquery,setsearchquery]=useState('')
 
   return (
     <>
       {/* fragments--means it will not render any extra element in the DOM, fragments let you group a list of children without adding extra nodes to the DOM.why it is used?--because in react you can only return one element from a component, so if you want to return multiple elements you can wrap them in a fragment. */}
         <section style={{textAlign: "center" }}>
-        <Header/>
+        <Header setsearchquery={setsearchquery}/>
         </section>
         
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/products' element={<Products/>}/>
+          <Route path='/products' element={<Products searchquery={searchquery}/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
